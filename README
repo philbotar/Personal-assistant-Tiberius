@@ -1,0 +1,16 @@
+Tiberius, Your personal AI assistant 
+
+(This is not a real "AI" but it fit the trend so why not)
+
+Libraries Used
+PortAudio
+PyAudio - Audio Driver for Python
+SpeechRecognition - SpeechRecognition which uses API's such as googleAPI 
+Pyttsx3 -Text To Speech
+datetime - allows for tiberius to return  the date and time
+
+
+//CURRENT FUNCTIONALITY//
+Tiberius will greet you as you begin to run the program
+When asked for the "Date", he will tell you the current day of the week, what day of the month and which month it is
+
