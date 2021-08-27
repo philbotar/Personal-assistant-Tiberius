@@ -1,0 +1,38 @@
+"""
+Personal Assitant: Tiberius
+
+Created on Thu Aug 26 16:54:28 2021
+
+@author: philipbotar
+"""
+import speech_recognition as sr  
+import pyttsx3
+
+#Firstly lets implement text to speech using pttysx3
+
+engine = pyttsx3.init()
+engine.say('hello')
+engine.runAndWait()
+engine.stop()
+
+
+#now lets implement the speech recognition
+# get audio from the microphone                             
+#what the following does is use the computers primary microphone as a source and
+#then uses googles api to listen and transcribe what the user is saying        
+hearing = sr.Recognizer()                                                                                   
+with sr.Microphone() as source:                                                                       
+    print("Speak:")                                                                                   
+    audio = hearing.listen(source)   
+try:
+    speechInput = hearing.recognize_google(audio,language='en-in')
+    print("You said " + hearing.recognize_google(audio,language='en-in'))
+except sr.UnknownValueError:
+    print("Could not understand audio")
+except sr.RequestError as e:
+    print("Could not request results; {0}".format(e))
+
+
+
+if "hello" in speechInput:
+   print("Hello!")
